@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Event Portal</title>
+  <style>
+    /* Comprehensive CSS for the Community Event Portal */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f9;
+      color: #333;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+    }
+
+    /* Task 11: Form Styling */
+    #registerForm {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    #registerForm input,
+    #registerForm select,
+    #registerForm button {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    #registerForm button {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #registerForm button:hover {
+      background-color: #2980b9;
+    }
+
+    #error {
+      color: #e74c3c;
+      font-size: 0.9rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Task 8: Filter and Search Styling */
+    #categoryFilter,
+    #search {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+      width: 200px;
+    }
+
+    .filter-container {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Task 9: Loading Spinner */
+    #loading {
+      display: none;
+      text-align: center;
+      color: #3498db;
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+
+    /* Task 7: Event Cards */
+    #events {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .event-card {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .event-card button {
+      background-color: #2ecc71;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 10px;
+    }
+
+    .event-card button:hover {
+      background-color: #27ae60;
+    }
+
+    .error {
+      color: #e74c3c;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      #registerForm input,
+      #registerForm select,
+      #registerForm button,
+      #categoryFilter,
+      #search {
+        width: 100%;
+        min-width: unset;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      #events {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Community Event Portal</h1>
+  
+  <!-- Task 11: Registration Form -->
+  <form id="registerForm">
+    <input name="name" placeholder="Name" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <select name="event">
+      <option value="Music Festival">Music Festival</option>
+      <option value="Tech Talk">Tech Talk</option>
+    </select>
+    <button type="submit">Register</button>
+    <span id="error"></span>
+  </form>
+
+  <!-- Task 8: Category Filter and Search -->
+  <div class="filter-container">
+    <select id="categoryFilter">
+      <option value="All">All</option>
+      <option value="Music">Music</option>
+      <option value="Tech">Tech</option>
+    </select>
+    <input id="search" placeholder="Search events">
+  </div>
+  
+  <!-- Task 9: Loading Spinner -->
+  <div id="loading">Loading...</div>
+  
+  <!-- Task 7: Event Display -->
+  <div id="events"></div>
+
+  <!-- Task 1: Include JavaScript and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap 5 Exercises Combined</title>
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    /* For Exercise 16.1: Fixed Footer */
+    .footer-fixed {
+      width: 100%;
+      z-index: 1030;
+    }
+    /* For Exercise 16.2: Badge Overlay */
+    .badge-absolute {
+      top: 10px;
+      right: 10px;
+    }
+    /* For Exercise 14.2: Responsive Sidebar */
+    .sidebar {
+      background: #f8f9fa;
+      min-height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 1. Setting Up Bootstrap 5 (CDN already included above) -->
+<!--
+  Exercise 1.2:
+  To use Bootstrap via npm or downloaded files, replace the CDN links above with local file paths, e.g.:
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+-->
+
+<!-- 2. Bootstrap Structure and Files -->
+<!--
+  Exercise 2.1:
+  Bootstrap directory structure:
+    - css: Contains Bootstrap's compiled CSS files (e.g., bootstrap.min.css).
+    - js: Contains Bootstrap's JavaScript plugins (e.g., bootstrap.bundle.min.js).
+    - icons: Contains Bootstrap Icons font files and CSS.
+-->
+
+<!-- 3. Responsive Grid Layout -->
+<div class="container my-4">
+  <h2>Responsive Grid Layout</h2>
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4 bg-primary text-white p-3 mb-2">Column 1</div>
+    <div class="col-12 col-md-6 col-lg-4 bg-secondary text-white p-3 mb-2">Column 2</div>
+    <div class="col-12 col-md-12 col-lg-4 bg-success text-white p-3 mb-2">Column 3</div>
+  </div>
+</div>
+
+<!-- 4. Column Layouts and Grid Classes -->
+<div class="container my-4">
+  <h2>Two Column Layout</h2>
+  <div class="row">
+    <aside class="col-md-3 bg-light p-3">Sidebar</aside>
+    <main class="col-md-9 bg-white p-3 border">Content Area</main>
+  </div>
+  <h2 class="mt-4">Four Column Layout</h2>
+  <div class="row">
+    <div class="col-sm-3 bg-info text-white p-2">Col 1</div>
+    <div class="col-sm-3 bg-warning text-dark p-2">Col 2</div>
+    <div class="col-sm-3 bg-danger text-white p-2">Col 3</div>
+    <div class="col-sm-3 bg-success text-white p-2">Col 4</div>
+  </div>
+</div>
+
+<!-- 5. Alignment and Reordering in Grid -->
+<div class="container my-4">
+  <h2>Centered Row & Reordering</h2>
+  <div class="row justify-content-center align-items-center" style="height: 100px;">
+    <div class="col-4 bg-light border">Centered Content</div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 order-md-2 bg-secondary text-white p-2">Second on desktop</div>
+    <div class="col-md-6 order-md-1 bg-primary text-white p-2">First on desktop</div>
+  </div>
+</div>
+
+<!-- 6. Responsive Flexbox Utilities -->
+<div class="container my-4">
+  <h2>Responsive Navbar (Flex)</h2>
+  <nav class="d-flex flex-column flex-md-row bg-dark p-2 mb-2">
+    <a class="nav-link text-white" href="#">Home</a>
+    <a class="nav-link text-white" href="#">About</a>
+    <a class="nav-link text-white" href="#">Contact</a>
+  </nav>
+  <div class="card d-flex flex-row justify-content-between align-items-center p-3">
+    <span>Card Left</span>
+    <span>Card Right</span>
+  </div>
+</div>
+
+<!-- 7. Typography -->
+<div class="container my-4">
+  <h2>Typography Utilities</h2>
+  <h1 class="display-1">Display 1</h1>
+  <p class="lead">This is a lead paragraph.</p>
+  <p class="text-muted fw-bold">Muted and bold text.</p>
+  <p class="text-uppercase">uppercase text</p>
+  <p class="text-lowercase">LOWERCASE TEXT</p>
+  <p class="text-capitalize">capitalize each word</p>
+</div>
+
+<!-- 8. Forms -->
+<div class="container my-4">
+  <h2>Registration Form</h2>
+  <form id="registerForm">
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input type="text" class="form-control" placeholder="Enter username" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <div class="input-group">
+        <span class="input-group-text">@</span>
+        <input type="email" class="form-control" placeholder="Email" required>
+      </div>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="terms" required>
+      <label class="form-check-label" for="terms">Accept Terms</label>
+    </div>
+    <button class="btn btn-primary" type="submit">Register</button>
+  </form>
+  <h2 class="mt-4">Login Form (Floating)</h2>
+  <form id="loginForm">
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+      <label for="floatingPassword">Password</label>
+    </div>
+    <button class="btn btn-success" type="submit">Login</button>
+  </form>
+</div>
+
+<!-- 9. Buttons -->
+<div class="container my-4">
+  <h2>Buttons</h2>
+  <button class="btn btn-primary">Primary</button>
+  <button class="btn btn-secondary">Secondary</button>
+  <button class="btn btn-outline-success">Outline Success</button>
+  <button class="btn btn-outline-danger">Outline Danger</button>
+  <div class="btn-group mt-2" role="group">
+    <button type="button" class="btn btn-info">Left</button>
+    <button type="button" class="btn btn-info">Middle</button>
+    <button type="button" class="btn btn-info">Right</button>
+  </div>
+  <div class="btn-group mt-2" role="group" aria-label="Toggle button group">
+    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+    <label class="btn btn-outline-primary" for="btncheck1">Toggle 1</label>
+    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+    <label class="btn btn-outline-primary" for="btncheck2">Toggle 2</label>
+  </div>
+</div>
+
+<!-- 10. Navbars and Navigation -->
+<div class="container my-4">
+  <h2>Responsive Navbar</h2>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
+    <a class="navbar-brand" href="#"><i class="bi bi-bootstrap"></i> Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <ul class="nav nav-tabs mb-2">
+    <li class="nav-item"><a class="nav-link active" href="#">Tab 1</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Tab 2</a></li>
+  </ul>
+  <ul class="nav nav-pills">
+    <li class="nav-item"><a class="nav-link active" href="#">Pill 1</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Pill 2</a></li>
+  </ul>
+</div>
+
+<!-- 11. Cards and Media Objects -->
+<div class="container my-4">
+  <h2>Profile Card</h2>
+  <div class="card" style="width: 18rem;">
+    <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=400&h=400&facepad=2" class="card-img-top" alt="Jane Doe portrait">
+    <div class="card-body">
+      <h5 class="card-title">Jane Doe</h5>
+      <p class="card-text">Web Developer</p>
+    </div>
+  </div>
+  <h2 class="mt-4">Media Object</h2>
+  <div class="d-flex align-items-start">
+    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=64&h=64&facepad=2" class="me-3 rounded-circle" alt="Profile of media object">
+    <div>
+      <h5>Media Heading</h5>
+      <p>Some content for the media object layout.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 12. Spacing Utilities -->
+<div class="container my-4">
+  <h2>Spacing Utilities</h2>
+  <div class="bg-light m-3 p-2">
+    Margin 3, Padding 2
+  </div>
+  <div class="bg-secondary text-white mt-4 py-5">
+    Margin Top 4, Padding Y 5
+  </div>
+  <h2 class="mt-4">Pricing Section</h2>
+  <div class="row text-center">
+    <div class="col-md-4 mb-4">
+      <div class="card p-3 m-2">
+        <h3>$9</h3>
+        <p>Basic</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card p-4 m-2">
+        <h3>$19</h3>
+        <p>Standard</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card p-5 m-2">
+        <h3>$29</h3>
+        <p>Premium</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 13. Colors and Backgrounds -->
+<div class="container my-4">
+  <h2>Dashboard Colors</h2>
+  <div class="row">
+    <div class="col bg-primary text-white p-3 m-1">Primary</div>
+    <div class="col bg-warning text-dark p-3 m-1">Warning</div>
+    <div class="col bg-success text-white p-3 m-1">Success</div>
+  </div>
+  <div class="bg-dark bg-gradient text-white p-4 mt-3">
+    Gradient Dark Background with White Text
+  </div>
+</div>
+
+<!-- 14. Display and Visibility -->
+<div class="container my-4">
+  <h2>Display & Visibility</h2>
+  <div class="d-none d-md-block bg-info text-white p-2 mb-2">Visible on md and up</div>
+  <div class="d-lg-flex bg-warning text-dark p-2 mb-2">Visible as flex on lg and up</div>
+  <div class="sidebar d-none d-md-block p-3">Sidebar (tablets and above)</div>
+</div>
+
+<!-- 15. Borders, Shadows, and Rounded Corners -->
+<div class="container my-4">
+  <h2>Borders & Shadows</h2>
+  <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=100&h=100&facepad=2" class="border border-primary border-3 rounded-circle mb-3" alt="Rounded avatar">
+  <div class="card shadow shadow-lg rounded-pill p-3">
+    <div class="card-body">
+      Card with shadow and rounded-pill
+    </div>
+  </div>
+</div>
+
+<!-- 16. Positioning Utilities -->
+<div class="container my-4 position-relative" style="height: 150px;">
+  <h2>Badge Overlay</h2>
+  <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=100&h=100&facepad=2" class="position-relative rounded-circle" alt="Badge overlay avatar">
+  <span class="badge bg-danger position-absolute badge-absolute">New</span>
+</div>
+
+<!-- Move the footer outside the container and ensure it stretches full width -->
+<footer class="bg-dark text-white text-center p-3 position-fixed bottom-0 footer-fixed" style="left:0;right:0;">
+  Fixed Footer
+</footer>
+
+<!-- 17. Bootstrap Icons -->
+<div class="container my-4">
+  <h2>Bootstrap Icons</h2>
+  <footer class="d-flex justify-content-center gap-3">
+    <a href="#" class="text-primary"><i class="bi bi-facebook"></i></a>
+    <a href="#" class="text-info"><i class="bi bi-twitter"></i></a>
+    <a href="#" class="text-danger"><i class="bi bi-instagram"></i></a>
+  </footer>
+  <div class="mt-3">
+    <button class="btn btn-outline-secondary"><i class="bi bi-house"></i></button>
+    <button class="btn btn-outline-secondary"><i class="bi bi-gear"></i></button>
+  </div>
+</div>
+
+<!-- 18. Bootstrap 5 JavaScript Plugins -->
+<div class="container my-4">
+  <h2>Modal & Accordion</h2>
+  <!-- Modal Trigger -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch Modal
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal Title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          Modal body content.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Accordion -->
+  <div class="accordion mt-3" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+          Accordion Item #1
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Content for accordion item #1.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+          Accordion Item #2
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Content for accordion item #2.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 19. Customization with Sass -->
+<!--
+  Exercise 19.1:
+    - Use npm to install Bootstrap: npm install bootstrap
+    - Set up Sass by creating a custom .scss file that imports Bootstrap's source files.
+  Exercise 19.2:
+    - Edit node_modules/bootstrap/scss/_variables.scss to change $primary and $border-radius.
+    - Import Bootstrap in your custom .scss and recompile using a Sass compiler.
+    - Example:
+      $primary: #ff6600;
+      $border-radius: 2rem;
+      @import "node_modules/bootstrap/scss/bootstrap";
+    - Compile with: sass custom.scss custom.css
+    - Link custom.css in your HTML.
+-->
+
+<!-- Bootstrap 5 JS Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Register form handler
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Registration successful!');
+});
+
+// Login form handler
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Login successful!');
+});
+</script>
+</body>
+</html>
